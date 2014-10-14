@@ -15,7 +15,9 @@ if($user->isLoggedIn()){
 <ul>
     <li><a href="logout.php">Log Out</a></li>  
 	<li><a href="changepassword.php">Change Password</a></li> 
-    <li><a href="update.php">Update Information</a></li>	
+    <li><a href="update.php">Update Information</a></li>
+    <li><a href="profile.php">Your Profile</a> </li>
+    <li><a href="question.php">Any Thing for Vote</a> </li>
 </ul>
 <?php
 if($user->hasPermissions('admin'))

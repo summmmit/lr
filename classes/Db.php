@@ -86,6 +86,12 @@ class DB
 
 	 }
 
+    public function getAll($table){
+       if(!$this->query("SELECT * FROM {$table}")->error()){
+            return $this;
+        }
+    }
+
 	 public function insert($table, $fields = array())
 	 {
          if(count($fields)){
