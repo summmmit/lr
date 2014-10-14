@@ -18,12 +18,12 @@ if($user->isLoggedIn()){
     <li><a href="update.php">Update Information</a></li>	
 </ul>
 <?php
+if($user->hasPermissions('admin'))
+{
+echo '<p>You are an admin</p>';
+}
 }
 else
 {
-if($user->hasPermissions('admin'))
-{
-echo '+You are an admin';
-}
     echo "<p>You need to<a href='login.php'> login </a> or <a href='register.php'> register</a></p>";
 }

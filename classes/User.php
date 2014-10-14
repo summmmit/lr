@@ -78,14 +78,15 @@ class User {
     }
 	
 	public function hasPermissions($key){
-	/*
-	print_r($this->data()->group);
-	exit;
 	
 	$group = $this->_db->get('groups', array('id', '=', $this->data()->group));
-	print_r($group->first());
-	exit;
-	*/
+        if($group->count()){
+            $permissions = json_decode($group->first()[0]->permissions, true);
+            if($permissions[$key] == true){
+                return true;
+            }
+        }
+        return false;
 	}
 	
 	public function update($fields = array(), $id = null){
