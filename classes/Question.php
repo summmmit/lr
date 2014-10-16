@@ -8,8 +8,7 @@
 
 class Question {
 
-    protected $_ques;
-
+    private $_db;
 
     public function __construct($user = null) {
 
@@ -17,23 +16,25 @@ class Question {
 
     }
 
-    public function find($id = null){
-
-        if($id){
-            $data = $this->_db->get('question', );
-        }
-
+    public function data()
+    {
+        return $this->_data[0];
     }
 
-    public function getQues(){
-        return $this->_ques;
+    public function show()
+    {
+
+            $field = "can_show";
+            $user = true;
+            $data = $this->_db->get('question', array($field, '=', $user));
+            if ($data->count()) {
+                return $data->results();
+            }
+            return false;
     }
 
-    public function setQues($ques){
-        $this->_ques = $ques;
+    public function showOptions(){
+        
     }
-
-
-
 
 }

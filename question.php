@@ -15,9 +15,14 @@ $question = new Question();
 if(!$user->isLoggedIn()){
     Redirect::to('index.php');
 }
-
-
-
 ?>
 
+<p>Your Vote</p>
+<?php
+
+foreach($question->show() as $number => $question_for_vote){
+    echo $question_for_vote->quest . "<br>";
+
+}
+?>
 
